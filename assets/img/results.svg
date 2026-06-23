@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" rx="28" fill="#f7faff"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Inter, Arial" font-size="28" font-weight="800" fill="#16213a">Results Placeholder</text>
+  <g font-family="Inter, Arial">
+    <rect x="90" y="115" width="470" height="310" rx="24" fill="#fff" stroke="#e5e8ef"/>
+    <text x="325" y="155" text-anchor="middle" font-size="20" font-weight="800" fill="#25324a">Retrieval Robustness</text>
+    <line x1="145" y1="365" x2="510" y2="365" stroke="#aab3c2"/><line x1="145" y1="365" x2="145" y2="190" stroke="#aab3c2"/>
+    <path d="M155 338 C220 310 250 280 305 255 C365 226 430 198 500 176" fill="none" stroke="#2f5fd0" stroke-width="6"/>
+    <path d="M155 350 C220 340 260 320 315 305 C380 288 430 272 500 250" fill="none" stroke="#f1b84b" stroke-width="6"/>
+    <text x="330" y="397" text-anchor="middle" font-size="14" fill="#5b6472">Retrieval pool size</text>
+    <text x="112" y="275" text-anchor="middle" transform="rotate(-90 112 275)" font-size="14" fill="#5b6472">Recall</text>
+    <rect x="640" y="115" width="470" height="310" rx="24" fill="#fff" stroke="#e5e8ef"/>
+    <text x="875" y="155" text-anchor="middle" font-size="20" font-weight="800" fill="#25324a">DTW Alignment Heatmap</text>
+    <g transform="translate(710,190)">
+      <rect width="260" height="160" fill="#fff" stroke="#e5e8ef"/>
+      <g opacity="0.95">
+        <rect x="0" y="0" width="52" height="32" fill="#f8d5d5"/><rect x="52" y="0" width="52" height="32" fill="#e96d6d"/><rect x="104" y="0" width="52" height="32" fill="#f7b0b0"/><rect x="156" y="0" width="52" height="32" fill="#f1e5e5"/><rect x="208" y="0" width="52" height="32" fill="#f7b0b0"/>
+        <rect y="32" width="52" height="32" fill="#e96d6d"/><rect x="52" y="32" width="52" height="32" fill="#f8d5d5"/><rect x="104" y="32" width="52" height="32" fill="#e96d6d"/><rect x="156" y="32" width="52" height="32" fill="#f7b0b0"/><rect x="208" y="32" width="52" height="32" fill="#f1e5e5"/>
+        <rect y="64" width="52" height="32" fill="#f1e5e5"/><rect x="52" y="64" width="52" height="32" fill="#f7b0b0"/><rect x="104" y="64" width="52" height="32" fill="#e96d6d"/><rect x="156" y="64" width="52" height="32" fill="#f8d5d5"/><rect x="208" y="64" width="52" height="32" fill="#f7b0b0"/>
+        <rect y="96" width="52" height="32" fill="#f8d5d5"/><rect x="52" y="96" width="52" height="32" fill="#f1e5e5"/><rect x="104" y="96" width="52" height="32" fill="#f7b0b0"/><rect x="156" y="96" width="52" height="32" fill="#e96d6d"/><rect x="208" y="96" width="52" height="32" fill="#f8d5d5"/>
+        <rect y="128" width="52" height="32" fill="#f7b0b0"/><rect x="52" y="128" width="52" height="32" fill="#f8d5d5"/><rect x="104" y="128" width="52" height="32" fill="#f1e5e5"/><rect x="156" y="128" width="52" height="32" fill="#f7b0b0"/><rect x="208" y="128" width="52" height="32" fill="#e96d6d"/>
+      </g>
+      <path d="M15 18 L65 50 L120 82 L172 116 L242 147" fill="none" stroke="#2f5fd0" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

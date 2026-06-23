@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="InstrAction: Towards Action-Centric Understanding in Instructional Videos">
+  <meta name="keywords" content="InstrAction, instructional videos, video-language model, action-centric pretraining, ECCV 2026">
+  <title>InstrAction | Project Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top">InstrAction</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Results</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <p class="venue">ECCV 2026</p>
+      <h1>InstrAction: Towards Action-Centric Understanding in Instructional Videos</h1>
+      <p class="subtitle">A pretraining framework that learns motion-aware, temporally grounded video-language representations for multi-step instructional videos.</p>
+
+      <div class="authors">
+        <span>Zhuoyi Yang</span>,
+        <span>Jiapeng Yu</span>,
+        <a href="https://rxtan2.github.io/" target="_blank" rel="noopener">Reuben Tan</a>,
+        <a href="https://boyangli.org/" target="_blank" rel="noopener">Boyang Li</a>,
+        <a href="https://visionlanguagelab.github.io/" target="_blank" rel="noopener">Huijuan Xu</a>
+      </div>
+
+      <div class="button-row">
+        <a class="button" href="https://arxiv.org/abs/2604.08762" target="_blank" rel="noopener">arXiv</a>
+        <a class="button" href="#">Code</a>
+        <a class="button" href="https://drive.google.com/drive/folders/1bQzpNbi7BbhkBJBzFm4OLtwg9BdlqJSF?usp=drive_link">Benchmark</a>
+        <a class="button secondary" href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="teaser section-narrow">
+      <div class="image-card large">
+        <img src="assets/figures/introduction.png" alt="Video-language modeling paradigms.">
+      </div>
+      <p class="caption"><strong>Figure 1.</strong> Existing video-language paradigms often assume trimmed clips and clean atomic-action captions, while instructional videos contain sequential actions, loosely aligned descriptions, and non-instructional noise.</p>
+    </section>
+
+    <section id="abstract" class="section-narrow">
+      <h2>Abstract</h2>
+      <p>
+        Understanding instructional videos requires recognizing fine-grained actions and modeling their temporal relations. Current video foundation models often rely on static objects and backgrounds rather than motion cues, especially when trained from noisy web supervision. <strong>InstrAction</strong> addresses this by combining LLM-assisted data curation, action-centric hard negatives, an Action Perceiver for motion-relevant token extraction, and auxiliary objectives for temporal alignment and cross-modal grounding.
+      </p>
+      <p>
+        The framework introduces <strong>DTW-Align</strong> to model non-linear temporal correspondence between visual action tokens and verb phrases, and <strong>Masked Action Modeling</strong> to recover masked action tokens using both visual evidence and language context. The accompanying <strong>InstrAct Bench</strong> evaluates semantic reasoning, procedural logic, and fine-grained retrieval for action-centric instructional video understanding.
+      </p>
+    </section>
+
+    <section class="section-wide highlights">
+      <div class="highlight-card">
+        <span class="number">01</span>
+        <h3>LLM-assisted curation</h3>
+        <p>Filters non-instructional captions, extracts structured verb phrases, and generates action-centric hard negatives from instructional video transcripts.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="number">02</span>
+        <h3>Action Perceiver</h3>
+        <p>Compresses redundant visual features into compact action tokens guided by verb-conditioned distillation.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="number">03</span>
+        <h3>Temporal& Cross-modal objectives</h3>
+        <p>Combines video-text contrastive learning with DTW-Align and Masked Action Modeling for procedural reasoning.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="number">04</span>
+        <h3>InstrAct Bench</h3>
+        <p>Diagnoses action semantics, procedural logic, and fine-grained dynamics where object shortcuts are controlled.</p>
+      </div>
+    </section>
+
+    <section id="method" class="section-narrow">
+      <h2>Method</h2>
+      <p>
+        InstrAction starts with a data-driven pipeline that transforms noisy instructional subtitles into action-centric supervision. It keeps concrete instructional captions, extracts verb phrases such as <em>crack egg</em> or <em>separate white</em>, and creates two types of hard negatives: verb-altered negatives and order-swapped negatives.
+      </p>
+      <div class="image-card">
+        <img src="assets/figures/data_curation.png" alt="LLM-assisted data curation pipeline">
+      </div>
+      <p class="caption"><strong>Figure 2.</strong> LLM-assisted data curation pipeline: filtering, verb phrase extraction, and hard-negative generation.</p>
+
+      <p>
+        On the model side, the Action Perceiver distills motion-essential tokens from video features. These action tokens support three complementary training signals: video-text contrastive learning, DTW-based action-verb alignment, and masked action reconstruction.
+      </p>
+      <div class="image-card">
+        <img src="assets/figures/Acm_framework.png" alt="InstrAction framework">
+      </div>
+      <p class="caption"><strong>Figure 3.</strong> InstrAction framework with Action Perceiver, DTW-Align, and Masked Action Modeling.</p>
+    </section>
+
+    <section id="benchmark" class="section-wide benchmark">
+      <div class="section-heading">
+        <h2>InstrAct Bench</h2>
+        <p>Three complementary tasks for measuring whether video-language models truly capture actions and procedures instead of static object cues.</p>
+      </div>
+      <div class="task-grid">
+        <article class="task-card">
+          <h3>InstrAct-Semantic</h3>
+          <p>10-choice multiple-choice evaluation with action-altered hard negatives that preserve objects and context.</p>
+          <ul>
+            <li>Focus: fine-grained verb discrimination</li>
+            <li>Metrics: R@1, R@5, Mean Rank</li>
+          </ul>
+        </article>
+        <article class="task-card">
+          <h3>InstrAct-Logic</h3>
+          <p>Multiple-choice evaluation with order-altered negatives that preserve the same action vocabulary.</p>
+          <ul>
+            <li>Focus: procedural order reasoning</li>
+            <li>Metric: Accuracy</li>
+          </ul>
+        </article>
+        <article class="task-card">
+          <h3>InstrAct-Dynamics</h3>
+          <p>Fine-grained cross-modal retrieval over object-centric pools where candidates share the same primary object.</p>
+          <ul>
+            <li>Focus: subtle procedural variation</li>
+            <li>Metrics: T2V/V2T Recall@K</li>
+          </ul>
+        </article>
+      </div>
+      <div class="image-card">
+        <img src="assets/figures/bench_visualization.png" alt="InstrAct Bench visualization">
+      </div>
+      <p class="caption"><strong>Figure 4.</strong> Benchmark examples, category distribution, and word cloud visualization.</p>
+    </section>
+
+    <section id="results" class="section-narrow">
+      <h2>Results</h2>
+      <p>
+        InstrAction improves action-centric understanding across semantic, logic, and dynamics benchmarks. The strongest gains appear when models must distinguish subtle action changes while objects remain similar or identical.
+      </p>
+      <div class="results-table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Benchmark</th>
+              <th>Best Baseline</th>
+              <th>InstrAction</th>
+              <th>Gain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>InstrAct-Semantic R@1</td>
+              <td>18.4</td>
+              <td><strong>28.1</strong></td>
+              <td>+9.7</td>
+            </tr>
+            <tr>
+              <td>InstrAct-Logic ACC</td>
+              <td>33.6</td>
+              <td><strong>40.0</strong></td>
+              <td>+6.4</td>
+            </tr>
+            <tr>
+              <td>InstrAct-Dynamics Mean R@1</td>
+              <td>30.68</td>
+              <td><strong>34.53</strong></td>
+              <td>+3.85</td>
+            </tr>
+            <tr>
+              <td>InstrAct-Dynamics Mean R@5</td>
+              <td>53.79</td>
+              <td><strong>57.13</strong></td>
+              <td>+3.34</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="image-card">
+        <div class="result-gallery">
+          <figure>
+            <img src="assets/figures/exp_retreival.png" alt="">
+            <figcaption>Retrieval results on InstrAct-Dynamics.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/figures/perceiver_analysis_1.png" alt="">
+            <figcaption>Action Perceiver alignment analysis.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/figures/perceiver_analysis_2.png" alt="">
+            <figcaption>Additional Action Perceiver analysis.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="caption"><strong>Figure 5.</strong> Retrieval visualization, DTW heatmaps, or qualitative comparisons.</p>
+    </section>
+
+    <section id="bibtex" class="section-narrow">
+      <h2>BibTeX</h2>
+      <pre class="bibtex"><code>@inproceedings{yang2026instraction,
+  title     = {InstrAction: Towards Action-Centric Understanding in Instructional Videos},
+  author    = {Yang, Zhuoyi and Yu, Jiapeng and Tan, Reuben and Li, Boyang and Xu, Huijuan},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Project page adapted in spirit from modern academic project-page layouts. Replace all placeholders before release.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
