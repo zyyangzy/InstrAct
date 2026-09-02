@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use InstrAct, please cite our ECCV 2026 paper."
+title: "InstrAct: Towards Action-Centric Understanding in Instructional Videos"
+type: software
+authors:
+  - family-names: Yang
+    given-names: Zhuoyi
+  - family-names: Yu
+    given-names: Jiapeng
+  - family-names: Tan
+    given-names: Reuben
+  - family-names: Li
+    given-names: Boyang Albert
+  - family-names: Xu
+    given-names: Huijuan
+repository-code: "https://github.com/zyyangzy/InstrAct"
+url: "https://zyyangzy.github.io/InstrAct/"
+preferred-citation:
+  type: conference-paper
+  title: "InstrAct: Towards Action-Centric Understanding in Instructional Videos"
+  authors:
+    - family-names: Yang
+      given-names: Zhuoyi
+    - family-names: Yu
+      given-names: Jiapeng
+    - family-names: Tan
+      given-names: Reuben
+    - family-names: Li
+      given-names: Boyang Albert
+    - family-names: Xu
+      given-names: Huijuan
+  conference:
+    name: European Conference on Computer Vision
+  year: 2026

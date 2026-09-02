@@ -1,0 +1,81 @@
+# InstrAct model hyperparameters. Runtime/ablation switches belong in args.py.
+backbone:
+  name: internvideo_b16
+  pretrained: false
+  checkpoint: checkpoints/ViCLIP-B_InternVid-200M.pth
+  strict_checkpoint: false
+  input_resolution: 224
+  kernel_size: 1
+  center: true
+  drop_path_rate: 0.1
+  checkpoint_num: 0
+  dropout: 0.0
+
+data:
+  max_negatives: 12
+  eval_max_negatives: 9
+  max_verbs: 6
+  max_text_length: 32
+  num_frames: 16
+  fps: 5
+  min_time: 5.0
+  crop_only: false
+  uniform_window: 5.0
+  max_order_negatives: 2
+
+model:
+  temperature: 0.01
+  temperature_min: 0.01
+  text_feature_dim: 512
+  action_mix_init: 0.0
+  distill_alpha_init: 0.0
+
+  action_perceiver:
+    dim: 512
+    k_v_dim: 512
+    depth: 2
+    dim_head: 64
+    heads: 8
+    num_latents: 8
+    ff_mult: 2
+    add_temporal_embedding: true
+    temporal_dropout: 0.1
+    local_temporal_attention: true
+    num_frames: ${data.num_frames}
+
+  multimodal_decoder:
+    dim: 512
+    num_tokens: 49408
+    multimodal_depth: 2
+    context_dim: 512
+    dim_head: 64
+    heads: 8
+    ff_mult: 2
+    pad_id: 0
+    mask_embedding_std: 0.02
+
+  dtw:
+    margin: 0.0
+    order_weight: 1.0
+    scale: 0.01
+
+  loss_weights:
+    vtc: 1.0
+    hard_negative: 1.0
+    dtw: 10.0
+    mam: 1.0
+
+finetune:
+  vision:
+    unfreeze_last_blocks: 2
+    freeze_temporal_position: false
+    freeze_spatial_position: true
+    freeze_patch_embedding: true
+  text:
+    freeze: true
+    unfreeze_last_blocks: 0
+    unfreeze_token_embedding: false
+  lr_multiplier:
+    backbone: 1.0
+    embeddings: 0.1
+    action_modules: 10.0

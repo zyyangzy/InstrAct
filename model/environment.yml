@@ -1,0 +1,24 @@
+name: instract
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.4
+  - torchvision=0.19
+  - pytorch-cuda=12.1
+  - ffmpeg=6
+  - pip
+  - pip:
+      - einops==0.8.0
+      - ffmpeg-python==0.2.0
+      - easydict==1.13
+      - ftfy==6.3.1
+      - numpy==1.26.4
+      - omegaconf==2.3.0
+      - packaging==24.2
+      - regex==2024.11.6
+      - transformers==4.57.1
+      - tqdm==4.67.1
+      - wandb==0.19.1
