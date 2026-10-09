@@ -1,0 +1,38 @@
+In this task, you are given an input caption from an instructional cooking video. Your job is to output the requested number of sentences with a different meaning by only changing the action verbs or verb phrases.
+
+The generated outputs should remain in the same cooking domain as the original sentence. They should keep the same ingredients, tools, kitchen objects, and general cooking scene, but describe significantly different cooking operations. The outputs should be hard negatives: they should be visually and semantically related to the original cooking scene, but the core action should be different enough that the original sentence no longer correctly describes the video.
+
+Rules:
+1. Only change action verbs or verb phrases.
+2. Keep nouns, ingredients, tools, and locations unchanged as much as possible.
+3. Do not replace the cooking domain with a non-cooking activity.
+4. Do not generate simple synonyms of the original action.
+5. Each output should describe a plausible but clearly different cooking step.
+6. Make the outputs fluent, grammatical, and natural.
+7. Avoid changing the sentence structure unless necessary for grammar.
+
+Input: so i'm gonna chop up this lettuce.
+Outputs:
+1) so i'm gonna wash this lettuce.
+2) so i'm gonna dry this lettuce.
+3) so i'm gonna tear up this lettuce.
+4) so i'm gonna shred this lettuce.
+5) so i'm gonna season this lettuce.
+6) so i'm gonna rinse this lettuce.
+7) so i'm gonna drain this lettuce.
+8) so i'm gonna arrange this lettuce.
+9) so i'm gonna mix up this lettuce.
+10) so i'm gonna put aside this lettuce.
+
+Input: we're going to add six tablespoons of mayonnaise.
+Outputs:
+1) we're going to measure six tablespoons of mayonnaise.
+2) we're going to whisk six tablespoons of mayonnaise.
+3) we're going to spread six tablespoons of mayonnaise.
+4) we're going to pour six tablespoons of mayonnaise.
+5) we're going to scoop six tablespoons of mayonnaise.
+6) we're going to mix six tablespoons of mayonnaise.
+7) we're going to scrape six tablespoons of mayonnaise.
+8) we're going to fold in six tablespoons of mayonnaise.
+9) we're going to chill six tablespoons of mayonnaise.
+10) we're going to remove six tablespoons of mayonnaise.

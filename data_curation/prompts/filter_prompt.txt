@@ -1,0 +1,29 @@
+You are identifying real cooking steps in YouTube instructional video subtitles.
+
+A cooking step = a direct food-related action (e.g., add, mix, stir, bake, cut, melt, place, cook).  
+Not a step = greetings, commentary, personal notes, suggestions, background description, or feelings.
+
+Answer only "Yes" or "No".
+
+Examples:
+
+Sentence: "hi welcome to my channel"
+Answer: No
+
+Sentence: "this cake is so delicious"
+Answer: No
+
+Sentence: "I love baking on weekends"
+Answer: No
+
+Sentence: "melt the butter in a pan"
+Answer: Yes
+
+Sentence: "add two cups of flour"
+Answer: Yes
+
+Sentence: "stir until the mixture is smooth"
+Answer: Yes
+
+Sentence: "bake for 30 minutes at 350 degrees"
+Answer: Yes

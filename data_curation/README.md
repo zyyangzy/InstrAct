@@ -1,8 +1,9 @@
 # InstrAct Data-Curation Pipeline
 
-> **Coming soon.**
+> **The main code and prompts are now available. Detailed processing scripts and
+> usage instructions will be provided in a future update.**
 
-The LLM-assisted data-curation pipeline described in the paper will be released here. It will cover:
+The released components cover:
 
 - filtering non-instructional captions;
 - extracting structured verb phrases;
@@ -10,4 +11,4 @@ The LLM-assisted data-curation pipeline described in the paper will be released 
 - generating order-swapped hard negatives;
 - producing the training annotation JSON consumed by `model/main.py`.
 
-Until this component is released, see the [project page](https://zyyangzy.github.io/InstrAct/) and the paper for a description of the pipeline. The expected output schema is documented in [`model/README.md`](../model/README.md#annotation-json-format).
+See the [project page](https://zyyangzy.github.io/InstrAct/) and the paper for an overview of the pipeline. The expected output schema is documented in [`model/README.md`](../model/README.md#annotation-json-format).

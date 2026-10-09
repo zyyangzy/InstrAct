@@ -4,7 +4,7 @@ Official project repository for **“InstrAct: Towards Action-Centric Understand
 
 - [Project page](https://zyyangzy.github.io/InstrAct/)
 - [Model training and evaluation](model/)
-- [Data-curation pipeline](data_curation/) — **Coming soon**
+- [Data-curation pipeline](data_curation/) — **Main code and prompts released; detailed scripts and usage instructions will be updated later**
 - [InstrAct Bench annotations](https://drive.google.com/drive/folders/1bQzpNbi7BbhkBJBzFm4OLtwg9BdlqJSF)
 - [Paper](https://arxiv.org/abs/2604.08762)
 
@@ -14,7 +14,7 @@ Official project repository for **“InstrAct: Towards Action-Centric Understand
 InstrAct/
 ├── docs/             # GitHub Pages project website
 ├── model/            # InstrAct model, training, and evaluation code
-└── data_curation/    # LLM-assisted data-curation pipeline (coming soon)
+└── data_curation/    # LLM-assisted data-curation code and prompts
 ```
 
 Please follow [`model/README.md`](model/README.md) for environment setup, backbone checkpoints, annotation formats, training, and evaluation.
